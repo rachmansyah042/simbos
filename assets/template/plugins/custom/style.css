@@ -1,0 +1,61 @@
+.form-add-rkas {
+    /* width: 500px; */
+}
+
+.field_wrapper {
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.new_field_wrapper {
+    background: white;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 3px 4.7px 0.3px rgba(0, 0, 0, .24);
+}
+
+.wrap-form-kegiatan {
+    margin-top: 10px;
+}
+
+.wrap-form-sub-kegiatan {
+    margin-top: 10px;
+}
+
+.btn-add-program {
+    margin-top: 10px;
+    color: white !important;
+}
+
+.btn-add-sub-program {
+    margin-top: 10px;
+    margin-left: 163px;
+    color: white !important;
+}
+
+.label-form-program {
+    font-size: 16px;
+}
+
+.remove_row_sub_kegiatan {
+    margin-left: 10px;
+}
+
+.delete-program {
+    color: red;
+    font-size: 16px;
+}
+
+.mt-modal {
+    margin-top: 10px;
+}
+
+.padding-body-modal {
+    padding: 0px 25px;
+}
+
+.img-head {
+    width: 31px !important;
+}
