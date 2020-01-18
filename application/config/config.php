@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 // $config['base_url'] = 'http://159.65.140.102/';
 
-$config['base_url'] = 'http://localhost/simbos/';
+$config['base_url'] = 'https://simbos.deployed.my.id';
 
 /*
 |--------------------------------------------------------------------------

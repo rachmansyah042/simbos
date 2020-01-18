@@ -63,13 +63,13 @@ class Repo_Belanja_Admin extends CI_Controller {
             $token['use_token']='Authorization: Bearer '.$use_token;
 
             
-            $url = 'https://dispendik-using.id:3000/v1/simbos/admin/getBelanja';
+            $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getBelanja';
             $output = $this->get_func($url, $token);
             $data['belanja'] = $output->data;
             // print_r();
 
             // get jenis belanja
-            $url_jenis = 'https://dispendik-using.id:3000/v1/simbos/admin/getJenisbelanja';
+            $url_jenis = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getJenisbelanja';
             $output = $this->get_func($url_jenis, $token);
             $data['jenis_belanja'] = $output->data;
             // print_r();
@@ -98,7 +98,7 @@ class Repo_Belanja_Admin extends CI_Controller {
         $belanja=$this->input->post('belanja');
         $kategori_belanja=$this->input->post('kategori_belanja');
 
-        $url = 'https://dispendik-using.id:3000/v1/simbos/admin/addBelanja';
+        $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/addBelanja';
         $passData=array('belanja'=>$belanja, 'kategori_belanja'=>$kategori_belanja);
 
         $tambah = json_decode($this->post_func($url, $passData, $data));
@@ -119,7 +119,7 @@ class Repo_Belanja_Admin extends CI_Controller {
         $data['use_token']='Authorization: Bearer '.$use_token;
 
 
-        $url = 'https://dispendik-using.id:3000/v1/simbos/admin/deleteMatrik';
+        $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/deleteMatrik';
         $passData=array('matrik_id'=>$id);
 
         $hapus = json_decode($this->post_func($url, $passData, $data));

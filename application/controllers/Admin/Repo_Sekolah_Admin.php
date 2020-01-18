@@ -76,7 +76,7 @@ class Repo_Sekolah_Admin extends CI_Controller {
             $token['use_token']='Authorization: Bearer '.$use_token;
 
             //get all sekolah
-            $url = 'https://dispendik-using.id:3000/v1/simbos/admin/getSekolah';
+            $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getSekolah';
             $output = $this->get_func($url, $token);
             $data['sekolah'] = $output->data;
             // var_dump($data);
@@ -105,13 +105,13 @@ class Repo_Sekolah_Admin extends CI_Controller {
             $use_token 	= $this->session->userdata('save_token');
             $token['use_token']='Authorization: Bearer '.$use_token;
 
-            $url = 'https://dispendik-using.id:3000/v1/simbos/admin/getSupervisor';
+            $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getSupervisor';
             $output = $this->get_func($url, $token);
             $data['supervisi'] = $output->data;
             // var_dump($data);
 
             // get bentuk sekolah
-            $url_bentuk = 'https://dispendik-using.id:3000/v1/get/getbentuk';
+            $url_bentuk = 'https://simbos.deployed.my.id:3000/v1/get/getbentuk';
             $output_bentuk = $this->get_notoken_func($url_bentuk);
             $data['bentuk_sekolah'] = $output_bentuk->data;
             // print_r($data['bentuk_sekolah']);
@@ -162,7 +162,7 @@ class Repo_Sekolah_Admin extends CI_Controller {
         $password=$this->input->post('password'); 
         $supervisor=$this->input->post('supervisor'); 
 
-        $url = 'https://dispendik-using.id:3000/v1/simbos/admin/addSekolah';
+        $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/addSekolah';
         $passData=array('NPSN'=>$npsn, 'nip_kepsek'=>$nip_kepsek,'nip_bendahara'=>$nip_bendahara, 'nama_sekolah'=>$nama_sekolah, 'status'=>$status, 'bentuk'=>$bentuk, 'alamat'=>$alamat, 'kecamatan'=>$kecamatan, 'kelurahan'=>$kelurahan, 'kode_pos'=>$kode_pos, 'nama_kepsek'=>$nama_kepsek, 'telp_kepsek'=>$telp_kepsek, 'nama_bendahara'=>$nama_bendahara, 'telp_bendahara'=>$telp_bendahara, 'nama_komite'=>$nama_komite, 'telp_komite'=>$telp_komite, 'email_kepsek'=>$email_kepsek, 'email_bendahara'=>$email_bendahara, 'email_komite'=>$email_komite, 'username'=>$username, 'email'=>$email, 'fullname'=>$fullname, 'password'=>$password, 'supervisor'=>$supervisor);
 
         $tambah = json_decode($this->post_func($url, $passData, $data));
@@ -192,13 +192,13 @@ class Repo_Sekolah_Admin extends CI_Controller {
             $token['use_token']='Authorization: Bearer '.$use_token;
 
             // get bentuk sekolah
-            $url_bentuk = 'https://dispendik-using.id:3000/v1/get/getbentuk';
+            $url_bentuk = 'https://simbos.deployed.my.id:3000/v1/get/getbentuk';
             $output_bentuk = $this->get_notoken_func($url_bentuk);
             $data['bentuk_sekolah'] = $output_bentuk->data;
             // print_r($data['bentuk_sekolah']);
 
             // $detail sekolah
-            $url = 'https://dispendik-using.id:3000/v1/simbos/admin/detailSekolah/'.$id;
+            $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/detailSekolah/'.$id;
             $output = $this->get_func($url, $token);
             $data['data'] = $output->data;
             // print_r($output->data);

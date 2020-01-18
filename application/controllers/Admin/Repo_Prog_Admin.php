@@ -63,7 +63,7 @@ class Repo_Prog_Admin extends CI_Controller {
             $token['use_token']='Authorization: Bearer '.$use_token;
 
             // $status = 'wait'
-            $url = 'https://dispendik-using.id:3000/v1/simbos/admin/getProgram';
+            $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getProgram';
             $output = $this->get_func($url, $token);
             $data['program'] = $output->data;
             // print_r($data['program']);
@@ -94,7 +94,7 @@ class Repo_Prog_Admin extends CI_Controller {
         $tahun=$this->input->post('tahun');
         $nama_kegiatan=$this->input->post('nama_kegiatan');
 
-        $url = 'https://dispendik-using.id:3000/v1/simbos/admin/addProgram';
+        $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/addProgram';
         $passData=array('nama_program'=>$nama_program, 'kode'=>$kode, 'tahun'=>$tahun, 'nama_kegiatan'=>$nama_kegiatan);
 
         $tambah = json_decode($this->post_func($url, $passData, $data));

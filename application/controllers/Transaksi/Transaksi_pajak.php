@@ -64,13 +64,13 @@ class Transaksi_pajak extends CI_Controller {
             $token['use_token']='Authorization: Bearer '.$use_token;
 
             //get pajak
-            $url_pajak = 'https://dispendik-using.id:3000/v1/simbos/operator/dataPajak';
+            $url_pajak = 'https://simbos.deployed.my.id:3000/v1/simbos/operator/dataPajak';
             $output_pajak = $this->get_func($url_pajak, $token);
             $data['pajak'] = $output_pajak->data;
             // print_r($data['pajak']);
 
             //get setoran
-            $url = 'https://dispendik-using.id:3000/v1/simbos/operator/getSetoran';
+            $url = 'https://simbos.deployed.my.id:3000/v1/simbos/operator/getSetoran';
             $output = $this->get_func($url, $token);
             $data['setoran'] = $output->data;
 
@@ -98,7 +98,7 @@ class Transaksi_pajak extends CI_Controller {
         $tanggal_setor= date("Y-m-d", strtotime($this->input->post('tanggal_setor'))); 
         $kastunai=$this->input->post('kastunai'); 
 
-        $url_setor = 'https://dispendik-using.id:3000/v1/simbos/operator/addSetorpajak';
+        $url_setor = 'https://simbos.deployed.my.id:3000/v1/simbos/operator/addSetorpajak';
         $passData=array('nomer_bukti'=>$nomer_bukti, 'tanggal_setor'=>$tanggal_setor, 'kastunai'=>$kastunai  );
 
         $setor = json_decode($this->post_func($url_setor, $passData, $token));
@@ -126,7 +126,7 @@ class Transaksi_pajak extends CI_Controller {
 
         $kastunai=$this->input->post('kastunai');
 
-        $url_batal = 'https://dispendik-using.id:3000/v1/simbos/operator/batalsetorpajak';
+        $url_batal = 'https://simbos.deployed.my.id:3000/v1/simbos/operator/batalsetorpajak';
         $passData=array('kastunai'=>$kastunai);
 
         $batal = json_decode($this->post_func($url_batal, $passData, $token));

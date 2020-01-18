@@ -48,7 +48,7 @@ class Auth extends CI_Controller {
 		$password=$this->input->post('password');
 		
 		$passData=array('username'=>$username,'password'=>$password);
-		$url = 'https://dispendik-using.id:3000/v1/simbos/login';
+		$url = 'https://simbos.deployed.my.id:3000/v1/simbos/login';
 
         $response = json_decode($this->post_func($url, $passData));
 

@@ -63,7 +63,7 @@ class Repo_Matriks_Admin extends CI_Controller {
             $token['use_token']='Authorization: Bearer '.$use_token;
 
             // $status = 'wait'
-            $url = 'https://dispendik-using.id:3000/v1/simbos/admin/getMatrik';
+            $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getMatrik';
             $output = $this->get_func($url, $token);
             $data['matriks'] = $output->data;
 
@@ -90,7 +90,7 @@ class Repo_Matriks_Admin extends CI_Controller {
 
         $matrik=$this->input->post('matrik');
 
-        $url = 'https://dispendik-using.id:3000/v1/simbos/admin/addMatrik';
+        $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/addMatrik';
         $passData=array('matrik'=>$matrik);
 
         $tambah = json_decode($this->post_func($url, $passData, $data));
@@ -111,7 +111,7 @@ class Repo_Matriks_Admin extends CI_Controller {
         $data['use_token']='Authorization: Bearer '.$use_token;
 
 
-        $url = 'https://dispendik-using.id:3000/v1/simbos/admin/deleteMatrik';
+        $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/deleteMatrik';
         $passData=array('matrik_id'=>$id);
 
         $hapus = json_decode($this->post_func($url, $passData, $data));

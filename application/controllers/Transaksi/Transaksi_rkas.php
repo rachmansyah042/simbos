@@ -63,7 +63,7 @@ class Transaksi_rkas extends CI_Controller {
             $token['use_token']='Authorization: Bearer '.$use_token;
 
             //get rkas
-            $url = 'https://dispendik-using.id:3000/v1/simbos/operator/getRkas';
+            $url = 'https://simbos.deployed.my.id:3000/v1/simbos/operator/getRkas';
             $output = $this->get_func($url, $token);
             $data['rkas'] = $output->data;
             // print_r($data['rkas']);
@@ -90,17 +90,17 @@ class Transaksi_rkas extends CI_Controller {
         $token['use_token']='Authorization: Bearer '.$use_token;
 
         //get tahun
-        $url_tahun = 'https://dispendik-using.id:3000/v1/simbos/admin/getTahun';
+        $url_tahun = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getTahun';
         $output = $this->get_func($url_tahun, $token);
         $data['tahun'] = $output->data;
 
         //get tribulan
-        $url_tribulan = 'https://dispendik-using.id:3000/v1/simbos/admin/getTribulan';
+        $url_tribulan = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getTribulan';
         $output_tribulan = $this->get_func($url_tribulan, $token);
         $data['tribulan'] = $output_tribulan->data;
 
         //get program & kegiatan
-        $url_program = 'https://dispendik-using.id:3000/v1/simbos/admin/getProgram';
+        $url_program = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getProgram';
         $output_program = $this->get_func($url_program, $token);
         $data['program'] = $output_program;
         $index=$this->input->post('index');
@@ -125,17 +125,17 @@ class Transaksi_rkas extends CI_Controller {
         $token['use_token']='Authorization: Bearer '.$use_token;
 
         //get tahun
-        $url_tahun = 'https://dispendik-using.id:3000/v1/simbos/admin/getTahun';
+        $url_tahun = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getTahun';
         $output = $this->get_func($url_tahun, $token);
         $data['tahun'] = $output->data;
 
         //get tribulan
-        $url_tribulan = 'https://dispendik-using.id:3000/v1/simbos/admin/getTribulan';
+        $url_tribulan = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getTribulan';
         $output_tribulan = $this->get_func($url_tribulan, $token);
         $data['tribulan'] = $output_tribulan->data;
 
         //get program & kegiatan
-        $url_program = 'https://dispendik-using.id:3000/v1/simbos/admin/getProgram';
+        $url_program = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getProgram';
         $output_program = $this->get_func($url_program, $token);
         $data['program'] = $output_program;
         $index=$this->input->post('index');
@@ -150,7 +150,7 @@ class Transaksi_rkas extends CI_Controller {
         $sub_kegiatan=$this->input->post('sub_kegiatan');
         $amount=$this->input->post('amount'); 
 
-        $url_tambah = 'https://dispendik-using.id:3000/v1/simbos/operator/addRkas';
+        $url_tambah = 'https://simbos.deployed.my.id:3000/v1/simbos/operator/addRkas';
         $passData=array('tahun'=>$tahun,'tribulan'=>$tribulan,'program'=>$program,'sekolah'=>$sekolah,'kegiatan'=>$kegiatan,'sub_kegiatan'=>$sub_kegiatan,'amount'=>$amount );
 
         $tambah = json_decode($this->post_func($url_tambah, $passData, $token));
@@ -180,7 +180,7 @@ class Transaksi_rkas extends CI_Controller {
         $token['use_token']='Authorization: Bearer '.$use_token;
 
         //get detail rkas
-        $url_rkas = 'https://dispendik-using.id:3000/v1/simbos/operator/get/rkas/'.$id;
+        $url_rkas = 'https://simbos.deployed.my.id:3000/v1/simbos/operator/get/rkas/'.$id;
         $output = $this->get_func($url_rkas, $token);
         $data['detail_rkas'] = $output->data;
         // print_r($data['detail_rkas']);
