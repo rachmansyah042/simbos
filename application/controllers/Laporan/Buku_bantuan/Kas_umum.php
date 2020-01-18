@@ -64,7 +64,7 @@ class Kas_umum extends CI_Controller {
             $token['use_token']='Authorization: Bearer '.$use_token;
 
             //get pajak
-            $url_pajak = 'https://simbos.deployed.my.id:3000/v1/simbos/operator/dataPajak';
+            $url_pajak = 'https://deployed.my.id:3000/v1/simbos/operator/dataPajak';
             $output_pajak = $this->get_func($url_pajak, $token);
             $data['pajak'] = $output_pajak->data;
 

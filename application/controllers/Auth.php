@@ -48,14 +48,16 @@ class Auth extends CI_Controller {
 		$password=$this->input->post('password');
 		
 		$passData=array('username'=>$username,'password'=>$password);
-		$url = 'https://simbos.deployed.my.id:3000/v1/simbos/login';
+		$url = 'https://deployed.my.id:3000/v1/simbos/login';
 
         $response = json_decode($this->post_func($url, $passData));
 
+        $this->load->view('auth');
         
-		$this->load->view('auth');
 
         if($response->success) {
+            
+            print_r($response);
 
             if($response->data->data->role == "1") {
 

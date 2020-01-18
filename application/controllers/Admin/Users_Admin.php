@@ -61,7 +61,7 @@ class Users_Admin extends CI_Controller {
             $token['use_token']='Authorization: Bearer '.$use_token;
     
             // $status = 'wait'
-            $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getUsers';
+            $url = 'https://deployed.my.id:3000/v1/simbos/admin/getUsers';
             $output = $this->get_func($url, $token);
             $data['users'] = $output->data;
             // var_dump($data);
@@ -110,7 +110,7 @@ class Users_Admin extends CI_Controller {
                 $password=$this->input->post('password');
                 $role=$this->input->post('role');
 
-                $url = 'https://simbos.deployed.my.id:3000/v1/simbos/register';
+                $url = 'https://deployed.my.id:3000/v1/simbos/register';
                 $passData=array('fullname'=>$fullname, 'username'=>$username,'email'=>$email, 'password'=>$password, 'role'=>$role, );
                 $tambah = json_decode($this->post_func($url, $passData));
                 // print_r($tambah);

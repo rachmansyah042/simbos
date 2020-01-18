@@ -63,13 +63,13 @@ class Repo_Pajak_Admin extends CI_Controller {
             $token['use_token']='Authorization: Bearer '.$use_token;
 
             
-            $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getPajak';
+            $url = 'https://deployed.my.id:3000/v1/simbos/admin/getPajak';
             $output = $this->get_func($url, $token);
             $data['pajak'] = $output->data;
             // print_r($data['pajak']);
 
             // jenis pajak
-            $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/getJenispajak';
+            $url = 'https://deployed.my.id:3000/v1/simbos/admin/getJenispajak';
             $output_jenis = $this->get_func($url, $token);
             $data['jenis_pajak'] = $output_jenis->data;
             // print_r($data['pajak']);
@@ -99,7 +99,7 @@ class Repo_Pajak_Admin extends CI_Controller {
         $uraian=$this->input->post('uraian');
         $presentase=$this->input->post('presentase');
 
-        $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/addPajak';
+        $url = 'https://deployed.my.id:3000/v1/simbos/admin/addPajak';
         $passData=array('jenis'=>$jenis, 'uraian'=>$uraian, 'presentase'=>$presentase);
 
         $tambah = json_decode($this->post_func($url, $passData, $data));
@@ -120,7 +120,7 @@ class Repo_Pajak_Admin extends CI_Controller {
         $data['use_token']='Authorization: Bearer '.$use_token;
 
 
-        $url = 'https://simbos.deployed.my.id:3000/v1/simbos/admin/deletePajak';
+        $url = 'https://deployed.my.id:3000/v1/simbos/admin/deletePajak';
         $passData=array('pajak_id'=>$id);
 
         $hapus = json_decode($this->post_func($url, $passData, $data));
